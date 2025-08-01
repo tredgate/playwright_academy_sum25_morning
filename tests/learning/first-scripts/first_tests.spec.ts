@@ -1,5 +1,3 @@
-// first_tests.spec.ts
-// tests/learning/first-scripts
 import { test } from "@playwright/test";
 
 test("First Test", async ({ page }) => {
