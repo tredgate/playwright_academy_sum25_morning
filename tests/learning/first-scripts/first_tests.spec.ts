@@ -7,6 +7,24 @@ test("First Test", async ({ page }) => {
   await page.locator(".btn").click();
 });
 /*
-Pokud jste minule necommitovali, nacommitujte, pushněte, vytvořte a dokončete PR, přepněte se do main, pullněte do mainu.
-Vytvořte novou branch: fluent_api
+Čas: ⌛6:00
+Vytvořte novou branch: exercise_assisted_pages
+Složka
+src/pages/pmtool/
+Soubor
+projects_page.ts
+Třída
+ProjectsPage
+
+
+Složka
+src/pages/pmtool/projects
+Soubory
+create_new_project_modal.ts
+project_tasks_page.ts
+Třídy
+CreateNewProjectModal
+ProjectTasksPage
+
+
 */
