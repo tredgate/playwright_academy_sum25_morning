@@ -4,19 +4,20 @@ import { test } from "@playwright/test";
 import { LoginPage } from "../../../src/pages/pmtool/login_page.ts";
 
 test.describe("Test Suite - Login Pmtool", () => {
-  test("Successful Login", async ({ page }) => {
-    const loginPage = new LoginPage(page);
+  let loginPage: LoginPage;
 
-    await loginPage
-      .openPmtool()
-      .then((login) => login.login("pw_academy", "Playwright321!"));
+  test.beforeEach(async ({ page }) => {
+    console.log("Běžím před každým testem");
+
+    loginPage = new LoginPage(page);
+    await loginPage.openPmtool();
   });
 
-  test("Failed login", async ({ page }) => {
-    const loginPage = new LoginPage(page);
+  test("Successful Login", async () => {
+    await loginPage.login("pw_academy", "Playwright321!");
+  });
 
-    await loginPage
-      .openPmtool()
-      .then((login) => login.login("pw_academy", "abcd"));
+  test("Failed login", async () => {
+    await loginPage.login("pw_academy", "abcd");
   });
 });
