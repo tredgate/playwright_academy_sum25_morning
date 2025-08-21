@@ -7,24 +7,14 @@ test("First Test", async ({ page }) => {
   await page.locator(".btn").click();
 });
 /*
-Čas: ⌛6:00
-Vytvořte novou branch: exercise_assisted_pages
-Složka
-src/pages/pmtool/
-Soubor
-projects_page.ts
-Třída
-ProjectsPage
 
+Vytvoř nový testovací soubor ve složce exercises: page_object_asserts_exercise.spec.ts
+Vytvoř nový test:
+Otevře PMTool
+Přihlásí se
+Zkontroluj:
+Viditelnost profilového tlačítka, které používáme pro odhlášení.
+Text názvu aplikace: TEG Project Management
 
-Složka
-src/pages/pmtool/projects
-Soubory
-create_new_project_modal.ts
-project_tasks_page.ts
-Třídy
-CreateNewProjectModal
-ProjectTasksPage
-
-
+* Testy budou vytvořené v Page Objektech, vytvoř do DashboardPage metodu na kontrolu.
 */
