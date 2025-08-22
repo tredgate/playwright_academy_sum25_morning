@@ -1,0 +1,4 @@
+upload_file.txt
+src/assets
+
+Nějaký text
