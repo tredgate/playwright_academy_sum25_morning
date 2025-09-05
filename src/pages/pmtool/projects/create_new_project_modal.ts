@@ -97,6 +97,8 @@ export class CreateNewProjectModal {
   }
 
   async fillStartDate(startDate: string): Promise<this> {
+    await this.startDateInput.click();
+    await this.startDateInput.press("Escape");
     await this.startDateInput.fill(startDate);
     return this;
   }
@@ -124,6 +126,16 @@ export class CreateNewProjectModal {
 
   async triggerAlarmMessage(): Promise<this> {
     await this.triggerNameInputValidation();
+    return this;
+  }
+
+  async selectPriorityByLabel(priorityLabel: string): Promise<this> {
+    await this.prioritySelect.selectOption({ label: priorityLabel });
+    return this;
+  }
+
+  async selectStatusByLabel(statusLabel: string): Promise<this> {
+    await this.statusSelect.selectOption({ label: statusLabel });
     return this;
   }
 }
