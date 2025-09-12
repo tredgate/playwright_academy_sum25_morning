@@ -3,10 +3,16 @@ import path from "path";
 import { LoginPage } from "../../../src/pages/pmtool/login_page.ts";
 
 test.describe("Visual Tests", () => {
-  test("Simple Visual Test", async ({ page }) => {
-    await page.goto("https://tredgate.com/webtrain/web-actions.html");
-    await expect(page).toHaveScreenshot("simple_test.png");
-  });
+  test(
+    "Simple Visual Test",
+    {
+      tag: "@github-actions",
+    },
+    async ({ page }) => {
+      await page.goto("https://tredgate.com/webtrain/web-actions.html");
+      await expect(page).toHaveScreenshot("simple_test.png");
+    }
+  );
 
   test.skip("Failing Visual Test", async ({ page }) => {
     await page.goto("https://tredgate.com/webtrain/dynamic-content.html");
