@@ -33,6 +33,7 @@ export class LoginPage {
 
   async openPmtool(): Promise<this> {
     await this.page.goto(this.url);
+    await this.emptyLoginFormVisualCheck();
     return this;
   }
 
@@ -64,5 +65,12 @@ export class LoginPage {
   async clickPasswordForgotten(): Promise<LostPasswordPage> {
     await this.lostPasswordAnchor.click();
     return new LostPasswordPage(this.page);
+  }
+
+  async emptyLoginFormVisualCheck(): Promise<this> {
+    await expect(this.page).toHaveScreenshot("empty_login_page.png", {
+      fullPage: true,
+    });
+    return this;
   }
 }
