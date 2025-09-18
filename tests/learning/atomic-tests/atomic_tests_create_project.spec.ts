@@ -1,8 +1,8 @@
 // atomic_tests_create_project.spec.ts
 // tests/learning/atomic-tests
 import { expect, test } from "@playwright/test";
-import { LoginPage } from "../../../src/pages/pmtool/login_page.ts";
 import { CreateNewProjectModal } from "../../../src/pages/pmtool/projects/create_new_project_modal.ts";
+import { LoginPage } from "../../../src/pages/pmtool/login_page.ts";
 import path from "path";
 
 test.describe("Atomic Tests: Create Project Modal", () => {
