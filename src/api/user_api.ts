@@ -1,4 +1,4 @@
-import { APIRequestContext } from "@playwright/test";
+import test, { APIRequestContext, expect } from "@playwright/test";
 
 export class UserApi {
   readonly request: APIRequestContext;
@@ -17,6 +17,15 @@ export class UserApi {
       },
     });
     return response;
+  }
+
+  async assertRegisterUser(username: string, password: string, email: string) {
+    await test.step("User Registration", async () => {
+      const response = await this.registerUser(username, password, email);
+      expect(response.status()).toBe(201);
+      //...
+      return response;
+    });
   }
 
   async loginUser(username: string, password: string) {

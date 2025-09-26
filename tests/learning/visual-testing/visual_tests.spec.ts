@@ -14,7 +14,7 @@ test.describe("Visual Tests", () => {
     }
   );
 
-  test.skip("Failing Visual Test", async ({ page }) => {
+  test("Failing Visual Test", async ({ page }) => {
     await page.goto("https://tredgate.com/webtrain/dynamic-content.html");
     await expect(page).toHaveScreenshot("failing_test.png");
   });
@@ -72,7 +72,7 @@ test.describe("Visual Tests", () => {
     );
   });
 
-  test("Visual Checks in PageObjects", async ({ page }) => {
+  test.skip("Visual Checks in PageObjects", async ({ page }) => {
     const loginPage = new LoginPage(page);
     const username = process.env.PMTOOL_USERNAME as string;
     const password = process.env.PMTOOL_PASSWORD as string;
